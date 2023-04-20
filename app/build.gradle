@@ -1,0 +1,91 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
+}
+
+android {
+    namespace 'com.omolleapaza.weatherapp'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.omolleapaza.weatherapp"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
+    kapt {
+        correctErrorTypes true
+    }
+
+    buildFeatures {
+        dataBinding true
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+    }
+
+}
+
+dependencies {
+
+    implementation(project(":domain"))
+    implementation(project(":data"))
+    implementation(project(":core"))
+
+    implementation Dependencies.androidCore
+    implementation Dependencies.appCompat
+    implementation Dependencies.material
+    implementation Dependencies.constraintLayout
+    testImplementation Dependencies.junit
+    androidTestImplementation Dependencies.androidJunit
+    androidTestImplementation Dependencies.espresso
+
+    implementation Dependencies.daggerHilt
+    kapt Dependencies.daggerCompiler
+
+    implementation Dependencies.navigationFragmentKtx
+    implementation Dependencies.navigationUiKtx
+
+    implementation Dependencies.coil
+
+    implementation Dependencies.composeUi
+    implementation Dependencies.composeMaterial
+    implementation Dependencies.composeToolingPreview
+    androidTestImplementation Dependencies.composeTestJunit
+    debugImplementation Dependencies.composeToolingDebug
+
+    implementation Dependencies.coilCompose
+
+    testImplementation Dependencies.mockk
+    testImplementation Dependencies.coroutinesTest
+    testImplementation Dependencies.truth
+    testImplementation Dependencies.archCoreTesting
+
+    implementation Dependencies.androidSplash
+
+
+}
