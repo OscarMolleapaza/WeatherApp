@@ -4,6 +4,8 @@ import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.omolleapaza.weatherapp.adapters.CityItemAdapter
+import com.omolleapaza.weatherapp.model.LocationUI
 
 const val CROSS_FADE_DURATION = 1000
 
@@ -14,5 +16,12 @@ fun setImageUrl(view: ImageView, url: String?) {
             crossfade(true)
             crossfade(CROSS_FADE_DURATION)
         }
+    }
+}
+
+@BindingAdapter("app:submitList")
+fun setCityList(rv: RecyclerView, items: List<LocationUI>?) {
+    items?.let {
+        (rv.adapter as? CityItemAdapter)?.submitList(it)
     }
 }

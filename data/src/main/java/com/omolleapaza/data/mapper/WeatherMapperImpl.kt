@@ -64,7 +64,9 @@ class WeatherMapperImpl @Inject constructor() : WeatherMapper {
             urlFlag = requests.urlFlag,
             rating = requests.rating,
             latitude = requests.latitude,
-            longitude = requests.longitude
+            longitude = requests.longitude,
+            desc = requests.desc,
+            id = requests.id
         )
     }
 
@@ -77,7 +79,9 @@ class WeatherMapperImpl @Inject constructor() : WeatherMapper {
             urlFlag = requests.urlFlag,
             rating = requests.rating,
             latitude = requests.latitude,
-            longitude = requests.longitude
+            longitude = requests.longitude,
+            desc = requests.desc,
+            id = requests.id
         )
     }
 

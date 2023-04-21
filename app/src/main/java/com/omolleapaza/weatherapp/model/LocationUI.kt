@@ -1,7 +1,7 @@
-package com.omolleapaza.domain.entities
+package com.omolleapaza.weatherapp.model
 
 
-data class LocationModel(
+data class LocationUI(
 
     val locationName: String,
     val country: String,
@@ -12,7 +12,7 @@ data class LocationModel(
     val latitude: Double,
     val longitude: Double,
     val desc: String,
-    val id:Int
+    val id: Int
 
 )
 
