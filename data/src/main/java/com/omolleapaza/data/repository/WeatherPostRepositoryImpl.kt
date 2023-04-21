@@ -19,7 +19,7 @@ class WeatherPostRepositoryImpl @Inject constructor(
     private val localDs: LocalWeatherDataSource,
     private val weatherMapper: WeatherMapper
 ) : WeatherRepository {
-    override suspend fun getWeather(
+    override fun getWeather(
         latitude: Double,
         longitude: Double
     ): Flow<Result<WeatherModel>> = flow {
@@ -38,7 +38,7 @@ class WeatherPostRepositoryImpl @Inject constructor(
         localDs.insertLocation(weatherMapper.mapLocationModelToEntity(location))
     }
 
-    override suspend fun getLocations(): Flow<Result<List<LocationModel>>> = flow {
+    override fun getLocations(): Flow<Result<List<LocationModel>>> = flow {
 
         val fetchLocations: List<LocationModel> = weatherMapper.mapLocationEntityToModelList(localDs.getAllLocations())
         emit(Result.Success(fetchLocations))

@@ -8,10 +8,10 @@ import kotlinx.coroutines.flow.Flow
 
 interface WeatherRepository {
 
-    suspend fun getWeather(latitude: Double, longitude: Double): Flow<Result<WeatherModel>>
+    fun getWeather(latitude: Double, longitude: Double): Flow<Result<WeatherModel>>
 
     suspend fun insertLocation(location: LocationModel)
 
-    suspend fun getLocations(): Flow<Result<List<LocationModel>>>
+    fun getLocations(): Flow<Result<List<LocationModel>>>
 
 }
