@@ -41,7 +41,7 @@ class CityListViewModel @Inject constructor(
             locationModel = LocationModel(
                 locationName = "Puno",
                 country = "PE",
-                city = "Arequipa",
+                city = "Puno",
                 urlImg = "https://c0.wallpaperflare.com/preview/722/187/818/puno-lake-quechua-titicaca.jpg",
                 urlFlag = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Flag_of_Peru_%28state%29.svg/800px-Flag_of_Peru_%28state%29.svg.png",
                 rating = "4.5",

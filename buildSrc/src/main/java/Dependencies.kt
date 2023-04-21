@@ -49,4 +49,9 @@ object Dependencies {
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
     const val archCoreTesting = "androidx.arch.core:core-testing:${Versions.archCoreTesting}"
 
+    //Maps
+    const val mapsCompose = "com.google.maps.android:maps-compose:${Versions.mapsCompose}"
+    const val mapsServices = "com.google.android.gms:play-services-maps:${Versions.playServicesMaps}"
+    const val mapLocation = "com.google.android.gms:play-services-location:${Versions.mapsLocation}"
+
 }

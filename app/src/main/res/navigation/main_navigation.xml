@@ -2,8 +2,25 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation"
+    app:startDestination="@id/cityListFragment"
     >
 
+    <fragment
+        android:id="@+id/cityListFragment"
+        android:name="com.omolleapaza.weatherapp.features.listLocations.CityListFragment"
+        android:label="Weather App"
+        >
+        <action
+            android:id="@+id/action_cityListFragment_to_cityDetailFragment"
+            app:destination="@id/cityDetailFragment"
+            />
+    </fragment>
 
+    <fragment
+        android:id="@+id/cityDetailFragment"
+        android:name="com.omolleapaza.weatherapp.features.detailCity.CityDetailFragment"
+        android:label="City Detail"
+        >
 
+    </fragment>
 </navigation>

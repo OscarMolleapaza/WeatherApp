@@ -39,7 +39,9 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="0dp"
+                android:scaleType="centerCrop"
                 android:layout_height="match_parent"
+                app:url="@{city.urlImg}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline3"
                 app:layout_constraintStart_toStartOf="parent"
@@ -49,6 +51,7 @@
             <TextView
                 android:id="@+id/tvTitle"
                 android:layout_width="0dp"
+                android:text="@{city.city}"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:fontFamily="@font/lato_bold"
@@ -61,6 +64,7 @@
 
             <TextView
                 android:id="@+id/tvReleaseState"
+                android:text="@{city.country}"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/lato_bold_italic"
@@ -74,6 +78,7 @@
                 android:layout_width="30dp"
                 android:layout_height="20dp"
                 android:layout_marginEnd="8dp"
+                app:url="@{city.urlFlag}"
                 app:layout_constraintBottom_toBottomOf="@+id/tvReleaseState"
                 app:layout_constraintEnd_toStartOf="@+id/tvReleaseState"
                 app:layout_constraintTop_toTopOf="@+id/tvReleaseState"
@@ -85,6 +90,7 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
+                android:text="@{city.desc}"
                 android:ellipsize="end"
                 android:fontFamily="@font/lato_bold"
                 android:maxLines="4"

@@ -31,4 +31,9 @@ object Versions {
     const val androidSplash = "1.0.0"
 
     const val java8Compatibility = "1.1.6"
+
+    const val mapsCompose = "2.11.2"
+    const val playServicesMaps = "18.1.0"
+    const val mapsLocation = "21.0.1"
+
 }
