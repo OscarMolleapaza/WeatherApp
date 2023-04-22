@@ -3,4 +3,6 @@
     <string name="tv_title">Weather - App</string>
 
     <string name="img_desc_image_city">ImageCity</string>
+    <string name="img_des_back_arrow">Back Arrow</string>
+
 </resources>

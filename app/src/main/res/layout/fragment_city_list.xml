@@ -37,6 +37,7 @@
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/tetSearch"
+            android:visibility="gone"
             android:layout_width="0dp"
             android:layout_height="34dp"
             android:layout_marginHorizontal="10dp"

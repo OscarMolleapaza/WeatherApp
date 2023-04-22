@@ -47,8 +47,8 @@ class CityListViewModel @Inject constructor(
                 urlImg = "https://c0.wallpaperflare.com/preview/722/187/818/puno-lake-quechua-titicaca.jpg",
                 urlFlag = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Flag_of_Peru_%28state%29.svg/800px-Flag_of_Peru_%28state%29.svg.png",
                 rating = "4.5",
-                latitude = -16.4040516,
-                longitude = -71.556521,
+                latitude = -15.84677,
+                longitude = -70.0575882,
                 desc = "Puno es una ciudad del sur de Perú ubicada junto al lago Titicaca, uno de los lagos más grandes de Sudamérica y el cuerpo de agua navegable más alto del mundo.",
                 id = 1
             )
@@ -61,8 +61,8 @@ class CityListViewModel @Inject constructor(
                 urlImg = "https://i.pinimg.com/550x/29/2c/c1/292cc19fa1f63a7842a6f3ac24d2ee1c.jpg",
                 urlFlag = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Flag_of_Peru_%28state%29.svg/800px-Flag_of_Peru_%28state%29.svg.png",
                 rating = "4.5",
-                latitude = -16.4040516,
-                longitude = -71.556521,
+                latitude = -16.403966,
+                longitude = -71.5802113,
                 desc = "Arequipa es la capital de la época colonial de la región de Arequipa en Perú. La rodean 3 volcanes y cuenta con edificios barrocos construidos de sillar, una piedra volcánica blanca.",
                 id = 2
             )

@@ -1,6 +1,8 @@
 package com.omolleapaza.weatherapp.features.detailCity.components
 
 import androidx.annotation.DrawableRes
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
@@ -32,7 +34,8 @@ fun CoilImage(
         contentDescription = stringResource(R.string.img_desc_image_city),
         contentScale = ContentScale.Crop,
         modifier = Modifier
-            .widthIn(150.dp)
+            .width(30.dp)
+            .height(20.dp)
             .clip(RoundedCornerShape(5.dp)),
     )
 }

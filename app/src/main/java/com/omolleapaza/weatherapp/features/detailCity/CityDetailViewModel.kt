@@ -53,7 +53,8 @@ class CityDetailViewModel @Inject constructor(
                 _viewState.update {
                     it.copy(
                         isLoading = false,
-                        currentCity = locationUIMapper.mapWeatherDomainToUI(result.data)
+                        currentCity = cityItem,
+                        currentWeather = locationUIMapper.mapWeatherDomainToUI(result.data)
                     )
                 }
             }
