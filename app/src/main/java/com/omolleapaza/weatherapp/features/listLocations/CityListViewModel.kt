@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.omolleapaza.core.Result
 import com.omolleapaza.domain.entities.LocationModel
 import com.omolleapaza.domain.usecase.ProdGetLocationsUseCase
+import com.omolleapaza.domain.usecase.ProdGetWeatherUseCase
 import com.omolleapaza.domain.usecase.ProdInsertLocationUseCase
 import com.omolleapaza.weatherapp.features.listLocations.state.CityListState
 import com.omolleapaza.weatherapp.mapper.LocationUIMapper
@@ -16,6 +17,7 @@ import javax.inject.Inject
 class CityListViewModel @Inject constructor(
     private val locationUIMapper: LocationUIMapper,
     prodInsertLocationUseCase: ProdInsertLocationUseCase,
+    prodGetWeatherUseCase: ProdGetWeatherUseCase,
     prodGetLocationsUseCase: ProdGetLocationsUseCase
 ) : ViewModel() {
 

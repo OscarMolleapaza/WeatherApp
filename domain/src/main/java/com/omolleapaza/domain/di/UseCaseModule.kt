@@ -1,9 +1,6 @@
 package com.omolleapaza.domain.di
 
-import com.omolleapaza.domain.usecase.GetLocationsUseCase
-import com.omolleapaza.domain.usecase.InsertLocationUseCase
-import com.omolleapaza.domain.usecase.ProdGetLocationsUseCase
-import com.omolleapaza.domain.usecase.ProdInsertLocationUseCase
+import com.omolleapaza.domain.usecase.*
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -22,4 +19,9 @@ abstract class UseCaseModule {
     abstract fun bindInsertLocationUseCase(
         prodInsertLocationUseCase: ProdInsertLocationUseCase,
     ): InsertLocationUseCase
+
+    @Binds
+    abstract fun bindGetWeatherUseCase(
+        prodGetWeatherUseCase: ProdGetWeatherUseCase,
+    ): GetWeatherUseCase
 }

@@ -1,7 +1,7 @@
-package com.omolleapaza.domain.entities
+package com.omolleapaza.weatherapp.model
 
 
-data class WeatherModel(
+data class WeatherUI(
 
     val coordinates: Coordinates,
     val weather: List<Weather>,

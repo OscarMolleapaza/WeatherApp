@@ -13,12 +13,14 @@ class WeatherMapperImpl @Inject constructor() : WeatherMapper {
                 longitude = requests.coordinates.longitude,
                 latitude = requests.coordinates.latitude
             ),
-            weather = Weather(
-                id = requests.weather.id,
-                main = requests.weather.main,
-                description = requests.weather.description,
-                icon = requests.weather.icon
-            ),
+            weather = requests.weather.map {
+                Weather(
+                    id = it.id,
+                    main = it.main,
+                    description = it.description,
+                    icon = it.icon
+                )
+            },
             base = requests.base,
             main = Main(
                 temp = requests.main.temp,

@@ -45,8 +45,8 @@ class CityListFragment : Fragment() {
         binding.rvCityList.adapter = cityItemAdapter
     }
 
-    private fun onItemClick(movie: LocationUI) {
-        findNavController().navigate(CityListFragmentDirections.actionCityListFragmentToCityDetailFragment())
+    private fun onItemClick(location: LocationUI) {
+        findNavController().navigate(CityListFragmentDirections.actionCityListFragmentToCityDetailFragment(location))
     }
 
 

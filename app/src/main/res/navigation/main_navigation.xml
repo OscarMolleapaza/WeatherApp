@@ -21,6 +21,9 @@
         android:name="com.omolleapaza.weatherapp.features.detailCity.CityDetailFragment"
         android:label="City Detail"
         >
-
+        <argument
+            android:name="location"
+            app:argType="com.omolleapaza.weatherapp.model.LocationUI"
+            />
     </fragment>
 </navigation>

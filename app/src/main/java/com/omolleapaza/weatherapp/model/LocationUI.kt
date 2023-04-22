@@ -1,6 +1,10 @@
 package com.omolleapaza.weatherapp.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+
+@Parcelize
 data class LocationUI(
 
     val locationName: String,
@@ -14,6 +18,6 @@ data class LocationUI(
     val desc: String,
     val id: Int
 
-)
+):Parcelable
 
 
