@@ -56,7 +56,7 @@ En la capa de presentación se usa el patrón MVVM, para separar la lógica de n
   Responsable de manejar lógica de negocio compleja, entre sus dependencias son los repositorios que se injectan por el constructor, que son los contratos o interfaces definidas en la misma capa. Los casos de uso también no ayuda a combinar diferentes repositorios. En estas clases deben tener una sola responsablidad como función principal y no tener datos mutables.
 
   ```kotlin
-  interface GetMoviesUseCase {
+  interface GetWeatherUseCase {
     operator fun invoke()
   }
   ```
