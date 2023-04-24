@@ -79,3 +79,9 @@ En la capa de presentación se usa el patrón MVVM, para separar la lógica de n
 ## Módulo Core
 Módulo de utilitarios.
 
+## Open API
+
+<img src="https://assets.zabbix.com/img/brands/openweather.jpg" align="right" width="21%"/>
+
+WeatherApp Utiliza [OpenWeatherAPI](https://openweathermap.org/current) para construir RESTful API.<br>
+OpenWeatherAPI proporciona informacion del clima, de una ciudad indicandole la latitud y longitud de la misma.

@@ -23,17 +23,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.compose.GoogleMap
 import com.google.maps.android.compose.Marker
 import com.google.maps.android.compose.MarkerState
+import com.google.maps.android.compose.rememberCameraPositionState
 import com.omolleapaza.weatherapp.R
 import com.omolleapaza.weatherapp.features.detailCity.CityDetailViewModel
 import com.omolleapaza.weatherapp.features.detailCity.components.CoilImage
@@ -58,6 +57,7 @@ fun CityDetailScreen(
     )
 
 }
+
 @Composable
 private fun CityDetail(viewState: CityDetailState, onBackButtonAction: () -> Unit) {
     Box(
@@ -83,6 +83,7 @@ private fun CityDetail(viewState: CityDetailState, onBackButtonAction: () -> Uni
         }
     }
 }
+
 @Composable
 private fun CityDetailBody(
     city: LocationUI?,
@@ -103,22 +104,44 @@ private fun CityDetailBody(
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        MyGoogleMaps(lat = city?.latitude?:0.0, lon = city?.longitude?:0.0 )
+        MyGoogleMaps(lat = city?.latitude ?: 0.0, lon = city?.longitude ?: 0.0)
 
         Spacer(modifier = Modifier.height(20.dp))
 
 
-        Column(modifier = Modifier
-            .fillMaxHeight()
-            .padding(16.dp)) {
+        Column(
+            modifier = Modifier
+                .fillMaxHeight()
+                .padding(16.dp)
+        ) {
 
             CoilImage(urlImg = city?.urlFlag.orEmpty())
             Spacer(modifier = Modifier.height(10.dp))
-            Text(text = city?.city?:"", fontFamily = fontFamily, color = Color.White, fontWeight = FontWeight.Bold, fontSize = 18.sp)
-            Text(text = city?.desc?:"", fontFamily = fontFamily, color = Color.White, fontWeight = FontWeight.Normal)
-            LabelWeatherText(label = String.format("%.3f", weather!!.main.temp_max - 273.15), type = "Temperatura Maxima" )
-            LabelWeatherText(label = String.format("%.3f", weather.main.temp - 273.15), type = "Temperatura Actual" )
-            LabelWeatherText(label = String.format("%.3f", weather.main.temp_min - 273.15), type = "Temperatura Minima" )
+            Text(
+                text = city?.city ?: "",
+                fontFamily = fontFamily,
+                color = Color.White,
+                fontWeight = FontWeight.Bold,
+                fontSize = 18.sp
+            )
+            Text(
+                text = city?.desc ?: "",
+                fontFamily = fontFamily,
+                color = Color.White,
+                fontWeight = FontWeight.Normal
+            )
+            LabelWeatherText(
+                label = String.format("%.3f", weather!!.main.temp_max - 273.15),
+                type = "Temperatura Maxima"
+            )
+            LabelWeatherText(
+                label = String.format("%.3f", weather.main.temp - 273.15),
+                type = "Temperatura Actual"
+            )
+            LabelWeatherText(
+                label = String.format("%.3f", weather.main.temp_min - 273.15),
+                type = "Temperatura Minima"
+            )
 
         }
 
@@ -126,14 +149,20 @@ private fun CityDetailBody(
 }
 
 @Composable
-fun MyGoogleMaps(lat: Double, lon: Double){
-    val marker = LatLng(lat,lon)
-    GoogleMap(modifier = Modifier
-        .fillMaxWidth()
-        .height(400.dp)){
+fun MyGoogleMaps(lat: Double, lon: Double) {
+    val marker = LatLng(lat, lon)
+    GoogleMap(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(400.dp),
+        cameraPositionState = rememberCameraPositionState{
+            position = CameraPosition.fromLatLngZoom(LatLng(lat,lon),6f)
+        }
+    ) {
         Marker(state = MarkerState(position = marker))
     }
 }
+
 @Composable
 private fun HeaderDetail(
     cityTitle: String?,
@@ -169,18 +198,18 @@ private fun HeaderDetail(
 fun DetailScreenPreview() {
     Box(modifier = Modifier.fillMaxSize()) {
         CityDetailBody(
-           city = LocationUI(
-               locationName = "Arequipa",
-               country = "PE",
-               city = "Arequipa",
-               urlImg = "https://i.pinimg.com/550x/29/2c/c1/292cc19fa1f63a7842a6f3ac24d2ee1c.jpg",
-               urlFlag = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Flag_of_Peru_%28state%29.svg/800px-Flag_of_Peru_%28state%29.svg.png",
-               rating = "4.5",
-               latitude = -16.4040516,
-               longitude = -71.556521,
-               desc = "Arequipa es la capital de la época colonial de la región de Arequipa en Perú. La rodean 3 volcanes y cuenta con edificios barrocos construidos de sillar, una piedra volcánica blanca.",
-               id = 2
-           ),
+            city = LocationUI(
+                locationName = "Arequipa",
+                country = "PE",
+                city = "Arequipa",
+                urlImg = "https://i.pinimg.com/550x/29/2c/c1/292cc19fa1f63a7842a6f3ac24d2ee1c.jpg",
+                urlFlag = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Flag_of_Peru_%28state%29.svg/800px-Flag_of_Peru_%28state%29.svg.png",
+                rating = "4.5",
+                latitude = -16.4040516,
+                longitude = -71.556521,
+                desc = "Arequipa es la capital de la época colonial de la región de Arequipa en Perú. La rodean 3 volcanes y cuenta con edificios barrocos construidos de sillar, una piedra volcánica blanca.",
+                id = 2
+            ),
             weather = null
         )
     }
